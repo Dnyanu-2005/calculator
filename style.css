@@ -1,0 +1,87 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.calculator {
+    border: 1px solid #e5e0e0;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.display input {
+    width: 100%;
+    padding: 10px;
+    font-size: 24px;
+    text-align: right;
+    border: none;
+    border-bottom: 2px solid #000000;
+    margin-bottom: 10px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.buttons1{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+   
+
+}
+.buttons input {
+    width: 22%;
+    padding: 15px;
+    font-size: 18px;
+    border: none;
+    background-color: #957e7e;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.buttons input.operator {
+    background-color: #ff9800;
+    color: rgb(5, 0, 0);
+}
+.buttons1 input.operator {
+    background-color: #12110f;
+    color: white;
+}
+
+.buttons input.equal {
+    background-color: #439b46;
+    color: rgb(12, 1, 1);
+}
+
+.history {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.history h2 {
+    margin-bottom: 10px;
+}
+
+.history ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.history li {
+    padding: 5px;
+    border-bottom: 1px solid #ccc;
+}
