@@ -1,87 +1,128 @@
 body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f4f4f4;
-    font-family: Arial, sans-serif;
+    margin: 0;
+    background: linear-gradient(135deg, #4a729a, #a75454);
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    width: 320px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    overflow: hidden;
 }
 
 .calculator {
-    border: 1px solid #e5e0e0;
+    background: #ffffff;
+    border-radius: 15px;
     padding: 20px;
-    border-radius: 10px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.display {
+    margin-bottom: 15px;
+    text-align: right;
 }
 
 .display input {
     width: 100%;
-    padding: 10px;
-    font-size: 24px;
-    text-align: right;
+    padding: 15px;
+    font-size: 32px;
     border: none;
-    border-bottom: 2px solid #000000;
-    margin-bottom: 10px;
+    border-radius: 10px;
+    background-color: #f0f0f0;
+    color: #333;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.display input:focus {
+    background-color: #fff;
+    color: #000;
+    outline: none;
 }
 
 .buttons {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 15px;
 }
-.buttons1{
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-   
 
-}
 .buttons input {
-    width: 22%;
-    padding: 15px;
-    font-size: 18px;
+    padding: 20px;
+    font-size: 20px;
     border: none;
-    background-color: #957e7e;
-    border-radius: 5px;
+    border-radius: 10px;
+    background-color: #e0e0e0;
+    color: #333;
     cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.buttons input:hover {
+    background-color: #d0d0d0;
 }
 
 .buttons input.operator {
-    background-color: #ff9800;
-    color: rgb(5, 0, 0);
+    background: linear-gradient(135deg, #ff9500, #ff6f00);
+    color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
-.buttons1 input.operator {
-    background-color: #12110f;
-    color: white;
+
+.buttons input.operator:hover {
+    background: linear-gradient(135deg, #ff6f00, #ff9500);
 }
 
 .buttons input.equal {
-    background-color: #439b46;
-    color: rgb(12, 1, 1);
+    background: linear-gradient(135deg, #28a745, #218838);
+    color: #fff;
+    grid-column: span 2;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.buttons input.equal:hover {
+    background: linear-gradient(135deg, #218838, #28a745);
 }
 
 .history {
-    margin-top: 20px;
-    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
-.history h2 {
+.history button {
+    background-color: #ff4d4d;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
     margin-bottom: 10px;
+    font-size: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.history button:hover {
+    background-color: #e60000;
 }
 
 .history ul {
     list-style-type: none;
     padding: 0;
+    margin: 0;
+    max-height: 150px;
+    overflow-y: auto;
 }
 
 .history li {
-    padding: 5px;
-    border-bottom: 1px solid #ccc;
+    padding: 8px 0;
+    border-bottom: 1px solid #ddd;
+    font-size: 16px;
+    color: #555;
 }
