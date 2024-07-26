@@ -7,51 +7,51 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    
     <div class="container">
         <div class="calculator">
-            <form name="calc">
+            <form>
                 <div class="display">
                     <input type="text" name="display" id="display" readonly>
                 </div>
                 <div class="buttons">
                     <input type="button" value="AC" onclick="clearDisplay()" class="operator">
-                    <input type="button" value="DE" onclick="deleteChar()" class="operator">
-                    <input type="button" value="." onclick="addToDisplay('.')" class="operator">
-                    <input type="button" value="/" onclick="addToDisplay('/')" class="operator">
+                    <input type="button" value="DE" onclick="deleteLastChar()" class="operator">
+                    <input type="button" value="." onclick="appendToDisplay('.')" class="operator">
+                    <input type="button" value="/" onclick="appendToDisplay('/')" class="operator">
                 </div>
                 <div class="buttons">
-                    <input type="button" value="7" onclick="addToDisplay('7')">
-                    <input type="button" value="8" onclick="addToDisplay('8')">
-                    <input type="button" value="9" onclick="addToDisplay('9')">
-                    <input type="button" value="*" onclick="addToDisplay('*')" class="operator">
+                    <input type="button" value="7" onclick="appendToDisplay('7')">
+                    <input type="button" value="8" onclick="appendToDisplay('8')">
+                    <input type="button" value="9" onclick="appendToDisplay('9')">
+                    <input type="button" value="*" onclick="appendToDisplay('*')" class="operator">
                 </div>
                 <div class="buttons">
-                    <input type="button" value="4" onclick="addToDisplay('4')">
-                    <input type="button" value="5" onclick="addToDisplay('5')">
-                    <input type="button" value="6" onclick="addToDisplay('6')">
-                    <input type="button" value="-" onclick="addToDisplay('-')" class="operator">
+                    <input type="button" value="4" onclick="appendToDisplay('4')">
+                    <input type="button" value="5" onclick="appendToDisplay('5')">
+                    <input type="button" value="6" onclick="appendToDisplay('6')">
+                    <input type="button" value="-" onclick="appendToDisplay('-')" class="operator">
                 </div>
                 <div class="buttons">
-                    <input type="button" value="1" onclick="addToDisplay('1')">
-                    <input type="button" value="2" onclick="addToDisplay('2')">
-                    <input type="button" value="3" onclick="addToDisplay('3')">
-                    <input type="button" value="+" onclick="addToDisplay('+')" class="operator">
+                    <input type="button" value="1" onclick="appendToDisplay('1')">
+                    <input type="button" value="2" onclick="appendToDisplay('2')">
+                    <input type="button" value="3" onclick="appendToDisplay('3')">
+                    <input type="button" value="+" onclick="appendToDisplay('+')" class="operator">
                 </div>
                 <div class="buttons">
-                    <input type="button" value="00" onclick="addToDisplay('00')">
-                    <input type="button" value="0" onclick="addToDisplay('0')">
-                    <input type="button" value="=" onclick="calculate()" class="equal operator">
+                    <input type="button" value="00" onclick="appendToDisplay('00')">
+                    <input type="button" value="0" onclick="appendToDisplay('0')">
+                    <input type="button" value="=" onclick="calculateResult()" class="equal">
                 </div>
-                <div class="buttons1">
-                    <input type="button" value="Clear History" onclick="clearHistory()" class="operator">
+                <div class="history">
+                    <button type="button" onclick="clearHistory()">Clear History</button>
+                    <ul id="historyList"></ul>
                 </div>
             </form>
-        </div>
-        <div class="history">
-            <h2>History</h2>
-            <ul id="history"></ul>
         </div>
     </div>
     <script src="script.js"></script>
 </body>
 </html>
+
+               
