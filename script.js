@@ -1,33 +1,36 @@
-function addToDisplay(value) {
-    document.calc.display.value += value;
+function appendToDisplay(value) {
+    document.getElementById('display').value += value;
 }
 
 function clearDisplay() {
-    document.calc.display.value = '';
+    document.getElementById('display').value = '';
 }
 
-function deleteChar() {
-    document.calc.display.value = document.calc.display.value.slice(0, -1);
+function deleteLastChar() {
+    let display = document.getElementById('display');
+    display.value = display.value.slice(0, -1);
 }
 
-function calculate() {
+function calculateResult() {
+    let display = document.getElementById('display');
     try {
-        const result = eval(document.calc.display.value);
-        document.calc.display.value = result;
-        addToHistory(document.calc.display.value);
-    } catch (error) {
-        document.calc.display.value = 'Error';
+        let result = eval(display.value);
+        addToHistory(`${display.value} = ${result}`);
+        display.value = result;
+    } catch {
+        display.value = 'Error';
     }
 }
 
-function addToHistory(result) {
-    const historyList = document.getElementById('history');
-    const listItem = document.createElement('li');
-    listItem.textContent = result;
-    historyList.appendChild(listItem);
+function addToHistory(entry) {
+    let historyList = document.getElementById('historyList');
+    let li = document.createElement('li');
+    li.textContent = entry;
+    historyList.appendChild(li);
 }
 
 function clearHistory() {
-    const historyList = document.getElementById('history');
+    let historyList = document.getElementById('historyList');
     historyList.innerHTML = '';
 }
+
